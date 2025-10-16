@@ -42,12 +42,9 @@ test.describe("Home page validation", () => {
         page.context().waitForEvent("page"),
         homePage.getButtonOrLink("link", "Customer Care").click(),
       ]);
-
       const talkToUsPage = new TalkToUsPage(customerCarePage);
       expect(customerCarePage).toHaveTitle("Talk To Us!");
-
       await expect(talkToUsPage.pageSection).toBeVisible();
-
       await talkToUsPage.talkToUsForm.fillFormInput([
         { label: "Mobile Number", value: data.mobile, inputField: true },
         { label: "Name", value: data.Name, inputField: true },
@@ -65,6 +62,6 @@ test.describe("Home page validation", () => {
           dropDown: true,
         },
       ]);
-    }
+   }
   );
 });
